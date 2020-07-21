@@ -1,0 +1,14 @@
+.navigation {
+    width: 100%;
+    height: 14vh;
+    background-color: #7ac4fb;
+    color: white;
+    position: fixed;
+    top: 0;
+    border-bottom: 2px solid #ec2373;
+    border-top: 2px solid #ec2373;
+}
+
+.logo {
+    width: 8vh;
+}
