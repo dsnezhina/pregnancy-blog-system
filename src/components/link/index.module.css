@@ -8,23 +8,15 @@
     height: auto;
     margin-right: 2%;
     cursor: pointer;
-    padding: 0.5%;
-    margin: 0.1%;
+    padding: 0%;
+    margin: 1.5%;
     vertical-align: top;
 }
 
-.header-list-item:not(:first-child) {
-    padding: 2%;
-    margin-top: 1.5%;
-    border-top: 2px solid #ec2373;
-}
 
 .header-list-item:hover {
-    border-top: none;
-    border-bottom: 2px solid #ec2373;
     font-weight: bold;
 }
-
 
 
 .footer-link {
@@ -42,19 +34,7 @@
     vertical-align: top;
 }
 
-.footer-list-item:nth-child(1) {
-    margin-left: 1%;
-}
-
-.footer-list-item:not(:last-child) {
-    padding: 2%;
-    margin-top: 1.5%;
-    border-bottom: 2px solid #ec2373;
-}
-
 .footer-list-item:hover {
-    border-bottom: none;
-    border-top: 2px solid #ec2373;
     font-weight: bold;
 }
 
@@ -64,15 +44,13 @@
 .aside-list-item {
     display: block;
     width: 98%;
-    border-left: 2px solid #7ac4fb;
-    border-right: 2px solid #7ac4fb;
     margin-bottom: 11%;
     height: 5vh;
     text-align: center;
 }
 
 .aside-link {
-    color: #7ac4fb;
+    color: #6e6868;
     text-align: center;
     text-decoration: none;
     padding-top: 5%;
@@ -84,7 +62,4 @@
     border-left: none;
     border-right: none;
     font-weight: bold;
-    border-top: 2px solid #7ac4fb;
-    border-bottom: 2px solid #7ac4fb;
-    color: #ec2373;
 }

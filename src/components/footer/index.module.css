@@ -1,18 +1,17 @@
 .footer {
     width: 100%;
-    height: 18vh;
-    background-color: #7ac4fb;
-    color: #ec2373;
-    border-top: 2px solid #ec2373;
-    border-bottom: 2px solid #ec2373;
-    margin-bottom: 1%;
-}
-
-.university {
+    height: 16vh;
+    background-color: #ebc4bc;
+    color: white;
+    margin-bottom: 0%;
     text-align: center;
-    font-weight: bold;;
 }
 
-.logo {
-    width: 8vh;
+.copyright {
+    text-align: center;
+    font-weight: bold;
+}
+
+.info {
+    text-align: center;
 }

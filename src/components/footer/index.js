@@ -1,29 +1,17 @@
 import React from 'react';
 import Link from "../link"
 import styles from './index.module.css';
-import logo from '../../images/pregnancy-stock-photography-logo.png'
 
 
 const Footer = () => {
     return (
         <footer className={styles.footer}>
             <div>
-                <Link href="#" title="Link 1" type="footer" />
-                <Link href="#" title="Link 1" type="footer" />
-                <Link href="#" title="Link 1" type="footer" />
-                <Link href="#" title="Link 1" type="footer" />
-                <Link href="#" title="Link 1" type="footer" />
-                <Link href="#" title="Link 1" type="footer" />
-                <Link href="#" title="Link 1" type="footer" />
-                <Link href="#" title="Link 1" type="footer" />
-                <Link href="#" title="Link 1" type="footer" />
-                <Link href="#" title="Link 1" type="footer" />
-                <Link href="#" title="Link 1" type="footer" />
-                <Link href="#" title="Link 1" type="footer" />
-                <Link href="#" title="Link 1" type="footer" />
-                <Link href="#" title="Link 1" type="footer" />
-                <img className={styles.logo} src={logo} alt="" />
-                <p className={styles.university}>Pregnancy Blog System @ 2020</p>
+                <Link href="#" title="❤ Facebook" type="footer" />
+                <Link href="#" title="❤ Twitter" type="footer" />
+                <Link href="#" title="❤ Instagram" type="footer"/>
+                <p className={styles.copyright}>Copyright © 2020</p>
+                <p className={styles.info}>All rights reserved. This website uses cookies to enhance your user experience. By using our site, we will assume you are happy with it and agree to our privacy policy.</p>
             </div>
 
         </footer>

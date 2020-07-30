@@ -1,14 +1,18 @@
 import React from 'react';
 import Link from "../link"
 import styles from './index.module.css';
-import logo from '../../images/pregnancy-stock-photography-logo.png'
-
 
 const Header = () => {
     return (
         <header className={styles.navigation}>
-            <img className={styles.logo} src={logo} alt=""/>
-            <Link href="#" title="Link 1" type="header" /> 
+            <Link href="#" title="❤ Home" type="header" /> 
+            <Link href="#" title="❤ Contributers" type="header" /> 
+            <Link href="#" title="❤ Publications" type="header" /> 
+            <Link href="#" title="❤ Post!" type="header" /> 
+            <Link href="#" title="❤ Login" type="header" /> 
+            <Link href="#" title="❤ Register" type="header" /> 
+            <Link href="#" title="❤ Profile" type="header" /> 
+            <Link href="#" title="❤ Logout" type="header" /> 
         </header>
     );
 };
