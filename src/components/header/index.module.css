@@ -1,14 +1,10 @@
 .navigation {
     width: 100%;
-    height: 14vh;
-    background-color: #7ac4fb;
+    height: 10vh;
+    background-color: #ebc4bc;
     color: white;
     position: fixed;
     top: 0;
-    border-bottom: 2px solid #ec2373;
-    border-top: 2px solid #ec2373;
+    text-align: center;
 }
 
-.logo {
-    width: 8vh;
-}
