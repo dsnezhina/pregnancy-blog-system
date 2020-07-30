@@ -13,7 +13,6 @@
     vertical-align: top;
 }
 
-
 .header-list-item:hover {
     font-weight: bold;
 }
@@ -39,8 +38,6 @@
 }
 
 
-
-
 .aside-list-item {
     display: block;
     width: 98%;
@@ -59,7 +56,5 @@
 }
 
 .aside-list-item:hover {
-    border-left: none;
-    border-right: none;
     font-weight: bold;
 }
