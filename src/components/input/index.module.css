@@ -1,0 +1,21 @@
+.label {
+    float: left;
+    width: 36%;
+    text-align: right;
+}
+
+.input {
+    text-align: center;
+    border:1px solid #6e6868;
+    padding: 1%;
+    width: 50%;
+    border-radius: 6px;
+    color: #6e6868;
+}
+
+.form-control {
+    width: 30%;
+    margin: 0 auto;
+    padding: 1%;
+    text-align: center;
+}

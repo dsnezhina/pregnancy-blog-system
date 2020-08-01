@@ -36,7 +36,6 @@ class Blogposts extends Component {
     render() {
         return (
             <div className={styles.container}>
-                <h1 className={styles.title}>Publications</h1>
                 <div className={styles["blogposts-wrapper"]}>
                     {this.renderBlogposts()}
                 </div>

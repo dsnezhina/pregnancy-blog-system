@@ -1,0 +1,20 @@
+.textarea {
+    width: 50%;
+    display: block;
+    margin: 0 auto;
+    resize: none;
+    padding: 2%;
+    height: 10vh;
+    font-style: italic;
+    border-radius: 6px;
+    border:1px solid #6e6868;
+    color: #6e6868;
+}
+
+.form {
+    width: 83%;
+    display: inline-block;
+    vertical-align: top;
+}
+
+
