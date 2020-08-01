@@ -31,7 +31,7 @@ const getNavigation = (user) => {
         },
         {
             title: "❤ Logout",
-            link: "/login"
+            link: "/logout"
         }],
         footer: [{
             title: "❤ Contacts",
