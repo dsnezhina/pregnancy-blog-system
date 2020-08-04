@@ -1,15 +1,30 @@
 import React from 'react';
 import Link from '../link'
 import styles from './index.module.css';
-import getNavigation from '../../utils/navigation'
 
 
 const Aside = () => {
-    const links = getNavigation({ id: "123" });
+    const links = [{
+        title: "Pregnancy",
+        link: "/category/pregnancy"
+    },
+    {
+        title: "Mom Lifestyle",
+        link: "/category/mom-lifestyle"
+    },
+    {
+        title: "Baby",
+        link: "/category/baby"
+    },
+    {
+        title: "Kids",
+        link: "/category/kids"
+    }];
+    
     return (
         <aside className={styles.aside}>
             {
-                links.aside.map(navElement => {
+                links.map(navElement => {
                     return (
                         <Link
                             key={navElement.title}

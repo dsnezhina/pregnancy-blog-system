@@ -1,17 +1,26 @@
 import React from 'react';
 import Link from "../link"
 import styles from './index.module.css';
-import getNavigation from '../../utils/navigation'
-
 
 const Footer = () => {
-    const links = getNavigation({ id: "123" });
+    const links = [{
+        title: "❤ Contacts",
+        link: "/contacts"
+    },
+    {
+        title: "❤ Facebook",
+        link: "https://www.facebook.com/"
+    },
+    {
+        title: "❤ Instagram",
+        link: "https://www.instagram.com/"
+    }];
 
     return (
         <footer className={styles.footer}>
             <div>
                 {
-                    links.footer.map(navElement => {
+                    links.map(navElement => {
                         return (
                             <Link
                                 key={navElement.title}
