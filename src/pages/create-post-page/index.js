@@ -1,70 +1,57 @@
-import React, { Component } from 'react';
+import React, { useState } from 'react';
 import PageLayout from '../../components/page-layout';
 import Title from '../../components/title';
 import styles from './index.module.css';
 import SubmitButton from '../../components/button/submit-button';
-import Input from '../../components/input'
+import Input from '../../components/input';
+import Blogposts from '../../components/blogposts';
+import getCookie from '../../utils/getCookie';
 
 
-class CreatePostPage extends Component {
-    constructor(props) {
-        super(props);
+const CreatePostPage = () => {
+    const [title, setTitle] = useState('');
+    const [content, setContent] = useState('');
+    const [updatedBlogpost, setUpdatedBlogpost] = useState([]);
 
-        this.state = {
-            title: "",
-            content: ""
-        };
-    };
-
-
-    onChange = (event, type) => {
-        const newState = {};
-        newState[type] = event.target.value;
-
-        this.setState(newState);
-    }
-
-    handleSubmit = async (e) => {
+    const handleSubmit = async (e) => {
         e.preventDefault();
 
-        const {
-            title,
-            content
-        } = this.state;
+        const token = getCookie('x-auth-token');
 
-        //TODO createPost()
+        await fetch('http://localhost:9999/api/blogpost', {
+            method: 'POST',
+            body: JSON.stringify({
+                title,
+                content
+            }),
+            headers: {
+                'Content-Type': 'application/json',
+                'Authorization': token
+            }
+        });
 
-        console.log("title", title)
-        console.log("content", content)
-    }
+        setTitle('');
+        setContent('');
+        setUpdatedBlogpost([...updatedBlogpost, 1]);
+    };
 
-
-
-    render() {
-
-        const {
-            title,
-            content
-        } = this.state;
-
-        return (
-            <PageLayout>
-                <form className={styles.form} onSubmit={this.handleSubmit}>
-                    <Title title='Create a post...' />
-                    <Input
-                        value={title}
-                        onChange={(e) => this.onChange(e, "title")}
-                        label="Title"
-                        id="title"
-                    />
-                    <textarea id="content" className={styles.textarea} defaultValue="" onChange={(e) => this.onChange(e, "content")}></textarea>
-                    <SubmitButton title='Post' />
-                </form>
-            </PageLayout >
-        );
-    }
-
-
+    return (
+        <PageLayout>
+            <form className={styles.form} onSubmit={handleSubmit}>
+                <Title title='Create a post...' />
+                <Input
+                    value={title}
+                    onChange={(e) => setTitle(e.target.value)}
+                    label="Title"
+                    id="title"
+                />
+                <textarea id="content" className={styles.textarea} value={content} onChange={(e) => setContent(e.target.value)}></textarea>
+                <SubmitButton title='Post' onClick={handleSubmit} />
+            </form>
+            <Blogposts length={3} updatedBlogpost={updatedBlogpost} />
+        </PageLayout >
+    );
 };
 
 export default CreatePostPage;
+

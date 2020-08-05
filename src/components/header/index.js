@@ -6,8 +6,9 @@ import UserContext from '../../Context'
 
 const Header = () => {
     const context = useContext(UserContext);
-    const { user, loggedIn } = context;
+    const { user } = context;
 
+    
     const navigation = {
         guest: [{
             title: "❤ Home",
@@ -47,10 +48,7 @@ const Header = () => {
         }]
     };
 
-    console.log("user", user)
-    //console.log("logged", user.loggedIn)
-
-    const links = loggedIn ? navigation.logged : navigation.guest;
+    const links = (user && user.loggedIn) ? navigation.logged : navigation.guest;
 
     return (
         <header className={styles.navigation}>
