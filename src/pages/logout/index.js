@@ -1,26 +1,18 @@
-import React, { Component } from 'react';
+import { useContext, useEffect } from 'react';
+import { useHistory } from 'react-router-dom';
 import UserContext from '../../Context';
 
-class LogoutPage extends Component {
-    constructor(props) {
-        super(props)
-        this.state = {
-            username: null,
-            posts: null
+const LogoutPage = () => {
 
-        };
-    };
+    const context = useContext(UserContext);
+    const history = useHistory();
 
-    static contextType = UserContext;
+    useEffect(() => {
+        context.logOut();
+        history.push('/');
+    });
 
-    componentDidMount() {
-        this.context.logOut();
-        this.props.history.push('/')
-    };
-
-    render() {
-        return null;
-    };
+    return null;
 };
 
 export default LogoutPage;

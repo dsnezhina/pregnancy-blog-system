@@ -2,12 +2,14 @@ import React from 'react';
 import styles from './index.module.css';
 
 
-const Blogpost = ({ description, author }) => {
+const Blogpost = ({ title, content, author }) => {
     return (
         <div className={styles.container}>
-
-            <p className={styles.description}>
-                {description}
+            <p className={styles.title}>
+                {title}
+            </p>
+            <p className={styles.content}>
+                {content}
             </p>
             <div>
                 <span className={styles.user}>
