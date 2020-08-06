@@ -2,7 +2,8 @@ import React from 'react';
 import Header from '../../components/header';
 import Footer from '../../components/footer';
 import styles from './index.module.css';
-import homePageImage from '../../images/home-page-image.png'
+import homePageImage from '../../images/home-page-image.png';
+import Blogposts from '../../components/blogposts'
 
 function HomePage() {
   return (
@@ -17,3 +18,5 @@ function HomePage() {
 }
 
 export default HomePage;
+
+
