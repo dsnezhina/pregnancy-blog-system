@@ -10,6 +10,7 @@ import CreatePostPage from './pages/create-post-page';
 import RegisterPage from './pages/register';
 import LoginPage from './pages/login';
 import LogoutPage from './pages/logout';
+import ErrorPage from './pages/error';
 
 
 const Navigation = () => {
@@ -23,6 +24,7 @@ const Navigation = () => {
                 <Route path="/register" component={RegisterPage} />
                 <Route path="/login" component={LoginPage} />
                 <Route path="/logout" component={LogoutPage} />
+                <Route component={ErrorPage} />
             </Switch>
         </BrowserRouter>
     )
