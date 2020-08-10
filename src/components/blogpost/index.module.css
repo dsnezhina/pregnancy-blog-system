@@ -10,7 +10,6 @@
     word-wrap: break-word;
     padding: 0.5%;
     font-style: italic;
-    /* border:1px solid blue; */
     margin-bottom: 0.5%;
     width: 95%;
     display: inline-block;
@@ -21,8 +20,7 @@
 .title {
     word-wrap: break-word;
     padding: 0.5%;
-    font-weight: bold;
-    /* border:1px solid blue; */
+    /* font-weight: bold; */
     margin-bottom: 0.5%;
     width: 95%;
     display: inline-block;
@@ -31,7 +29,6 @@
 }
 
 .container div {
-    /* border:1px solid red; */
     height: auto;
     text-align: right;
     margin-bottom: 0.5%;
@@ -40,11 +37,10 @@
 .user {
     text-decoration: underline;
     text-align: right;
-    /* border:1px solid green; */
     padding-right: 1%;
 }
 
 .image {
-    width: 32px;
-    height: 32px;
+    width: 300px;
+    height: 300px;
 }
