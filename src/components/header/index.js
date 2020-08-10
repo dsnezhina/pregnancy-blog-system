@@ -27,10 +27,6 @@ const Header = () => {
             link: "/"
         },
         {
-            title: "❤ Contributers",
-            link: "/contributers"
-        },
-        {
             title: "❤ Publications",
             link: "/publications"
         },

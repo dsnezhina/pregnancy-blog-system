@@ -11,10 +11,11 @@ import RegisterPage from './pages/register';
 import LoginPage from './pages/login';
 import LogoutPage from './pages/logout';
 import ErrorPage from './pages/error';
+import PublicationPage from './pages/publication';
+import EditPublicationPage from './pages/edit';
 
 
 const Navigation = () => {
-
     return (
         <BrowserRouter>
             <Switch>
@@ -24,6 +25,8 @@ const Navigation = () => {
                 <Route path="/register" component={RegisterPage} />
                 <Route path="/login" component={LoginPage} />
                 <Route path="/logout" component={LogoutPage} />
+                <Route path="/publication/:blogpostid" component={PublicationPage} />
+                <Route path="/edit/:blogpostid" component={EditPublicationPage} />
                 <Route component={ErrorPage} />
             </Switch>
         </BrowserRouter>
