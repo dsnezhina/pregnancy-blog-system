@@ -2,6 +2,7 @@ import React from 'react';
 import styles from './index.module.css';
 
 const Blogpost = ({ _id, title, image, content, author }) => {
+
     return (
         <div className={styles.container}>
             {/* <img className={styles.image} src={image} alt=""></img> */}
