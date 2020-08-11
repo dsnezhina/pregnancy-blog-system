@@ -1,0 +1,12 @@
+.blogposts-wrapper {
+    width: 100%;
+    /* border:1px solid red; */
+    height: auto;
+}
+
+.paragraph {
+    color: #6e6868;
+    margin-top: 0.5%;
+    margin-bottom: 2%;
+    font-size: 15px;
+}

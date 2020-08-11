@@ -13,6 +13,7 @@ import LogoutPage from './pages/logout';
 import ErrorPage from './pages/error';
 import PublicationPage from './pages/publication';
 import EditPublicationPage from './pages/edit';
+import ProfilePage from './pages/profile'
 
 
 const Navigation = () => {
@@ -27,6 +28,7 @@ const Navigation = () => {
                 <Route path="/logout" component={LogoutPage} />
                 <Route path="/publication/:blogpostid" component={PublicationPage} />
                 <Route path="/edit/:blogpostid" component={EditPublicationPage} />
+                <Route path="/profile/:userid" component={ProfilePage} />
                 <Route component={ErrorPage} />
             </Switch>
         </BrowserRouter>
