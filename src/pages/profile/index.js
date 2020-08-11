@@ -1,16 +1,14 @@
-import React, { useState, useEffect, useContext, useCallback } from 'react';
+import React, { useState, useEffect, useCallback } from 'react';
 import { useHistory, useParams } from 'react-router-dom';
 import PageLayout from '../../components/page-layout';
 import styles from './index.module.css';
 import Title from '../../components/title';
-import UserContext from '../../Context';
 import Blogpost from '../../components/blogpost'
 
 
 const ProfilePage = () => {
     const [username, setUsername] = useState(null);
     const [blogposts, setBlogposts] = useState(null);
-    const context = useContext(UserContext);
     const history = useHistory();
     const params = useParams();
 
@@ -56,8 +54,8 @@ const ProfilePage = () => {
         <PageLayout>
             <div>
                 <Title title='Profile' />
-                <p className={styles.paragraph}>User: {username}</p>
-                <p className={styles.paragraph}>Posts: {blogposts.length}</p>
+                <p className={styles.paragraph}><b>User: {username}</b></p>
+                <p className={styles.paragraph}><b>Posts: {blogposts.length}</b></p>
             </div>
             <div className={styles["blogposts-wrapper"]}>
                 {renderBlogposts()}
