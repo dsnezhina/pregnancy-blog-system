@@ -6,21 +6,21 @@ import styles from './index.module.css';
 const Aside = () => {
     const links = [{
         title: "Pregnancy",
-        link: "/category/pregnancy"
+        link: "/publications/pregnancy"
     },
     {
         title: "Mom Lifestyle",
-        link: "/category/mom-lifestyle"
+        link: "/publications/momlifestyle"
     },
     {
-        title: "Baby",
-        link: "/category/baby"
+        title: "Babies",
+        link: "/publications/babies"
     },
     {
         title: "Kids",
-        link: "/category/kids"
+        link: "/publications/kids"
     }];
-    
+
     return (
         <aside className={styles.aside}>
             {
