@@ -1,12 +1,13 @@
-import React, { useState, useEffect, useCallback } from 'react';
+import React, { useState, useEffect, useCallback, useContext } from 'react';
 import { useHistory, useParams } from 'react-router-dom';
 import PageLayout from '../../components/page-layout';
 import styles from './index.module.css';
-import getBlogpost from '../../utils/getBlogpost'
+import getBlogpost from '../../utils/getBlogpost';
+import UserContext from '../../Context'
 
 
 const PublicationPage = () => {
-    
+
     const [title, setTitle] = useState(null);
     const [author, setAuthor] = useState(null);
     const [image, setImage] = useState(null);
@@ -16,6 +17,8 @@ const PublicationPage = () => {
     const params = useParams();
 
     const id = params.blogpostid;
+    const context = useContext(UserContext);
+    const { user } = context;
 
     const deletePost = async () => {
 
@@ -41,7 +44,7 @@ const PublicationPage = () => {
         setTitle(blogpost.title);
         setAuthor(blogpost.author.username);
         setImage(blogpost.image);
-        setCategory(blogpost.category)
+        setCategory(blogpost.category);
         setContent(blogpost.content);
 
     }, [id]);
@@ -67,10 +70,10 @@ const PublicationPage = () => {
                     Gategory: <b>{category}</b>
                 </p>
                 <p className={styles.content}>{content}</p>
-                <div className={styles['button-container']}>
+                {(author === user.username) ? (<div className={styles['button-container']}>
                     <button className={styles.button} onClick={editPost}>Edit</button>
                     <button className={styles.button} onClick={deletePost}>Delete</button>
-                </div>
+                </div>) : null}
             </div>
         </PageLayout>
     );
