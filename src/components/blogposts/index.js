@@ -10,15 +10,16 @@ const Blogposts = (props) => {
 
     const getAllBlogposts = useCallback(async () => {
 
-        const blogposts = await getBlogposts(props.length);
+        const blogposts = await getBlogposts(props.length, props.category);
+
         setBlogposts(blogposts);
 
-    }, [props.length]);
+    }, [props.length, props.category]);
 
     const renderBlogposts = () => {
-        return blogposts.map((blogpost, index) => {
+        return blogposts.map((blogpost) => {
             return (
-                <Blogpost key={blogpost._id} index={index} {...blogpost} />
+                <Blogpost key={blogpost._id} {...blogpost} />
             )
         })
     };
@@ -28,9 +29,13 @@ const Blogposts = (props) => {
     }, [props.updatedBlogpost, getAllBlogposts]);
 
     return (
-        <div className={styles["blogposts-wrapper"]}>
-            {renderBlogposts()}
-        </div>
+        (blogposts.length > 0)
+            ? (<div className={styles["blogposts-wrapper"]}>
+                {renderBlogposts()}
+            </div>)
+            : ((<div className={styles["blogposts-wrapper"]}>
+                <p className={styles.paragraph}>There is no blog posts yet...</p>
+            </div>))
     );
 };
 
