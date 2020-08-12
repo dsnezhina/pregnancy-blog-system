@@ -27,12 +27,12 @@ const Navigation = () => {
         <BrowserRouter>
             <Switch>
                 <Route path='/' exact component={HomePage} />
-                <Route path='/publications/:category'>
+                <Route path='/publications/:category?'>
                     {loggedIn ? (<PublicationsPage />) : (<Redirect to='/login' />)}
                 </Route>
-                <Route path='/publications'>
+                {/* <Route path='/publications'>
                     {loggedIn ? (<PublicationsPage />) : (<Redirect to='/login' />)}
-                </Route>
+                </Route> */}
                 <Route path='/post'>
                     {loggedIn ? (<CreatePostPage />) : (<Redirect to='/login' />)}
                 </Route>
