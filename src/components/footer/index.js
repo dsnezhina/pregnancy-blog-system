@@ -1,19 +1,19 @@
 import React from 'react';
-import Link from "../link"
+import Link from '../link';
 import styles from './index.module.css';
 
 const Footer = () => {
     const links = [{
-        title: "❤ Contacts",
-        link: "/contacts"
+        title: '❤ Contacts',
+        link: '/contacts'
     },
     {
-        title: "❤ Facebook",
-        link: "https://www.facebook.com/"
+        title: '❤ Facebook',
+        link: 'https://www.facebook.com/'
     },
     {
-        title: "❤ Instagram",
-        link: "https://www.instagram.com/"
+        title: '❤ Instagram',
+        link: 'https://www.instagram.com/'
     }];
 
     return (
@@ -26,7 +26,7 @@ const Footer = () => {
                                 key={navElement.title}
                                 href={navElement.link}
                                 title={navElement.title}
-                                type="footer"
+                                type='footer'
                             />)
                     })
                 }

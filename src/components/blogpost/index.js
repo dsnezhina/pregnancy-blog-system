@@ -8,11 +8,10 @@ const Blogpost = ({ _id, title, image, content, category, author }) => {
 
     const handleClick = () => {
         history.push(`/publication/${_id}`)
-    }
+    };
 
     return (
         <div className={styles.container}>
-            {/* <img className={styles.image} src={image} alt=""></img> */}
             <p className={styles.title}>
                 <b>{title}</b> by <b>{author.username}</b>
                 <br />Category: <b>{category}</b>
@@ -22,13 +21,12 @@ const Blogpost = ({ _id, title, image, content, category, author }) => {
             </p>
             <div>
                 <span className={styles.user}>
-                    {/* <a className="btn" href={`/publication/${_id}`}>Details</a> */}
                     <button className={styles.button} onClick={handleClick}>Details</button>
                 </span>
             </div>
         </div>
     );
-}
+};
 
 export default Blogpost;
 

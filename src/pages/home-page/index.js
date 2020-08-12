@@ -8,11 +8,11 @@ function HomePage() {
   return (
     <div className={styles.app}>
       <Header />
-      <img className={styles.img} src={errorPageImage} alt="" />
+      <img className={styles.img} src={errorPageImage} alt='' />
       <Footer />
     </div>
   );
-}
+};
 
 export default HomePage;
 

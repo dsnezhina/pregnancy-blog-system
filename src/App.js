@@ -16,7 +16,7 @@ const App = (props) => {
     };
 
     const logOut = () => {
-        document.cookie = "x-auth-token= ; expires = Thu, 01 Jan 1970 00:00:00 GMT"
+        document.cookie = 'x-auth-token= ; expires = Thu, 01 Jan 1970 00:00:00 GMT'
         setUser({
             loggedIn: false
         });
@@ -25,10 +25,10 @@ const App = (props) => {
     useEffect(() => {
         const token = getCookie('x-auth-token');
         if (!token) {
-            logOut()
-            setLoading(false)
-            return
-        }
+            logOut();
+            setLoading(false);
+            return;
+        };
 
         fetch('http://localhost:9999/api/user/verify', {
             method: 'GET',
@@ -43,22 +43,21 @@ const App = (props) => {
                 logIn({
                     username: response.user.username,
                     id: response.user._id
-                })
+                });
             } else {
-                logOut()
-                setLoading(false)
+                logOut();
+                setLoading(false);
             }
 
-            setLoading(false)
+            setLoading(false);
         })
     }, []);
 
     if (loading) {
         return (
             <div>Loading...</div>
-        )
-    }
-
+        );
+    };
 
     return (
         <UserContext.Provider value={{

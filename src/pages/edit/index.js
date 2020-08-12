@@ -6,7 +6,7 @@ import styles from './index.module.css';
 import SubmitButton from '../../components/button/submit-button';
 import Input from '../../components/input';
 import getCookie from '../../utils/getCookie';
-import getBlogpost from '../../utils/getBlogpost';
+import getBlogposts from '../../utils/getBlogposts';
 
 
 const EditPublicationPage = () => {
@@ -21,7 +21,7 @@ const EditPublicationPage = () => {
 
     const getBlogpostDetails = useCallback(async () => {
 
-        const blogpost = await getBlogpost(id);
+        const blogpost = await getBlogposts(1, undefined, id);
 
         setTitle(blogpost.title);
         setImage(blogpost.image);
@@ -33,7 +33,7 @@ const EditPublicationPage = () => {
 
     useEffect(() => {
 
-        getBlogpostDetails()
+        getBlogpostDetails();
         // eslint-disable-next-line react-hooks/exhaustive-deps
     }, [id]);
 
@@ -59,7 +59,7 @@ const EditPublicationPage = () => {
         })
             .catch(e => {
                 history.push('/error')
-            })
+            });
     };
 
     return (
@@ -69,25 +69,24 @@ const EditPublicationPage = () => {
                 <Input
                     value={title}
                     onChange={(e) => setTitle(e.target.value)}
-                    label="Title"
-                    id="title"
+                    label='Title'
+                    id='title'
                 />
                 <Input
                     value={image}
                     onChange={(e) => setImage(e.target.value)}
-                    label="Image"
-                    id="image"
+                    label='Image'
+                    id='image'
                 />
-                <label className={styles.label} htmlFor="category">Category:</label>
-                <select className={styles.select} name="category" id="category" onChange={(e) => { setCategory(e.target.value) }}>
-                    <option value=""></option>
-                    <option value="Pregnancy">Pregnancy</option>
-                    <option value="Mom Lifestyle">Mom Lifestyle</option>
-                    <option value="Babies">Babies</option>
-                    <option value="Kids">Kids</option>
+                <label className={styles.label} htmlFor='category'>Category:</label>
+                <select className={styles.select} name='category' id='category' onChange={(e) => { setCategory(e.target.value) }}>
+                    <option value=''></option>
+                    <option value='Pregnancy'>Pregnancy</option>
+                    <option value='Mom Lifestyle'>Mom Lifestyle</option>
+                    <option value='Babies'>Babies</option>
+                    <option value='Kids'>Kids</option>
                 </select>
-                {/* <label className={styles.label} htmlFor="content">Content:</label> */}
-                <textarea id="content" label="Content" className={styles.textarea} value={content} onChange={(e) => setContent(e.target.value)}></textarea>
+                <textarea id='content' label='Content' className={styles.textarea} value={content} onChange={(e) => setContent(e.target.value)}></textarea>
                 <SubmitButton title='Post' onClick={handleSubmit} />
             </form>
         </PageLayout >
