@@ -1,7 +1,7 @@
 import React, { useContext } from 'react';
-import Link from "../link";
+import Link from '../link';
 import styles from './index.module.css';
-import UserContext from '../../Context'
+import UserContext from '../../Context';
 
 
 const Header = () => {
@@ -11,36 +11,36 @@ const Header = () => {
     
     const navigation = {
         guest: [{
-            title: "❤ Home",
-            link: "/"
+            title: '❤ Home',
+            link: '/'
         },
         {
-            title: "❤ Register",
-            link: "/register"
+            title: '❤ Register',
+            link: '/register'
         },
         {
-            title: "❤ Login",
-            link: "/login"
+            title: '❤ Login',
+            link: '/login'
         }],
         logged: [{
-            title: "❤ Home",
-            link: "/"
+            title: '❤ Home',
+            link: '/'
         },
         {
-            title: "❤ Publications",
-            link: "/publications"
+            title: '❤ Publications',
+            link: '/publications'
         },
         {
-            title: "❤ Post!",
-            link: "/post"
+            title: '❤ Post!',
+            link: '/post'
         },
         {
-            title: "❤ Profile",
+            title: '❤ Profile',
             link: `/profile/${user && user.id}`
         },
         {
-            title: "❤ Logout",
-            link: "/logout"
+            title: '❤ Logout',
+            link: '/logout'
         }]
     };
 
@@ -55,8 +55,8 @@ const Header = () => {
                             key={navElement.title}
                             href={navElement.link}
                             title={navElement.title}
-                            type="header"
-                        />)
+                            type='header'
+                        />);
                 })
             }
         </header>

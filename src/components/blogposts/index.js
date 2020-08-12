@@ -1,7 +1,7 @@
 import React, { useState, useCallback, useEffect } from 'react';
 import styles from './index.module.css';
 import Blogpost from '../blogpost';
-import getBlogposts from '../../utils/getBlogposts'
+import getBlogposts from '../../utils/getBlogposts';
 
 
 const Blogposts = (props) => {
@@ -20,8 +20,8 @@ const Blogposts = (props) => {
         return blogposts.map((blogpost) => {
             return (
                 <Blogpost key={blogpost._id} {...blogpost} />
-            )
-        })
+            );
+        });
     };
 
     useEffect(() => {
@@ -30,10 +30,10 @@ const Blogposts = (props) => {
 
     return (
         (blogposts.length > 0)
-            ? (<div className={styles["blogposts-wrapper"]}>
+            ? (<div className={styles['blogposts-wrapper']}>
                 {renderBlogposts()}
             </div>)
-            : ((<div className={styles["blogposts-wrapper"]}>
+            : ((<div className={styles['blogposts-wrapper']}>
                 <p className={styles.paragraph}>There is no blog posts yet...</p>
             </div>))
     );

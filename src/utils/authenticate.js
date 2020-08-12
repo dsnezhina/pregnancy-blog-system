@@ -9,8 +9,8 @@ const authenticate = async (url, body, onSuccess, onFailure) => {
             }
         });
 
-        const authToken = promise.headers.get("Authorization");
-        document.cookie = `x-auth-token=${authToken}`
+        const authToken = promise.headers.get('Authorization');
+        document.cookie = `x-auth-token=${authToken}`;
 
         const response = await promise.json();
 
@@ -18,14 +18,13 @@ const authenticate = async (url, body, onSuccess, onFailure) => {
             onSuccess({
                 username: response.username,
                 id: response._id
-            })
+            });
         } else {
-            onFailure()
+            onFailure();
         }
     } catch (e) {
-        onFailure(e)
-    }
+        onFailure(e);
+    };
+};
 
-}
-
-export default authenticate
+export default authenticate;

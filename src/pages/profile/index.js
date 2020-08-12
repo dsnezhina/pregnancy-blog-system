@@ -3,7 +3,7 @@ import { useHistory, useParams } from 'react-router-dom';
 import PageLayout from '../../components/page-layout';
 import styles from './index.module.css';
 import Title from '../../components/title';
-import Blogpost from '../../components/blogpost'
+import Blogpost from '../../components/blogpost';
 
 
 const ProfilePage = () => {
@@ -13,12 +13,12 @@ const ProfilePage = () => {
     const params = useParams();
 
     const getData = useCallback(async () => {
-        const id = params.userid
-        const response = await fetch(`http://localhost:9999/api/user?id=${id}`)
+        const id = params.userid;
+        const response = await fetch(`http://localhost:9999/api/user?id=${id}`);
 
         if (!response.ok) {
-            history.push('/error')
-        }
+            history.push('/error');
+        };
 
         const user = await response.json();
 
@@ -27,19 +27,19 @@ const ProfilePage = () => {
     }, [params.userid, history]);
 
     useEffect(() => {
-        getData()
+        getData();
         // eslint-disable-next-line react-hooks/exhaustive-deps
     }, []);
 
     const renderBlogposts = () => {
 
         return blogposts.map((blogpost, index) => {
-            const data = { ...blogpost }
-            data.author = { username }
+            const data = { ...blogpost };
+            data.author = { username };
             return (
                 <Blogpost key={blogpost._id} index={index} {...data} />
-            )
-        })
+            );
+        });
     };
 
     if (!username || !blogposts) {
@@ -57,7 +57,7 @@ const ProfilePage = () => {
                 <p className={styles.paragraph}><b>User: {username}</b></p>
                 <p className={styles.paragraph}><b>Posts: {blogposts.length}</b></p>
             </div>
-            <div className={styles["blogposts-wrapper"]}>
+            <div className={styles['blogposts-wrapper']}>
                 {renderBlogposts()}
             </div>
         </PageLayout>

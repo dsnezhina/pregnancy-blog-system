@@ -8,12 +8,10 @@ const ErrorPage = () => {
     return (
         <div className={styles.app}>
           <Header />
-          <img className={styles.img} src={errorPageImage} alt="" />
-          {/* <div className={styles.container}>
-          </div> */}
+          <img className={styles.img} src={errorPageImage} alt='' />
           <Footer />
         </div>
       );
-}
+};
 
 export default ErrorPage;

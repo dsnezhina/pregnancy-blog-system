@@ -36,22 +36,22 @@ const RegisterPage = () => {
                 <Input
                     value={username}
                     onChange={(e) => setUsername(e.target.value)}
-                    label="Username"
-                    id="username"
+                    label='Username'
+                    id='username'
                 />
                 <Input
-                    type="password"
+                    type='password'
                     value={password}
                     onChange={(e) => setPassword(e.target.value)}
-                    label="Password"
-                    id="password"
+                    label='Password'
+                    id='password'
                 />
                 <Input
-                    type="password"
+                    type='password'
                     value={rePassword}
                     onChange={(e) => setRePassword(e.target.value)}
-                    label="Re-password"
-                    id="re-password"
+                    label='Re-password'
+                    id='re-password'
                 />
                 <SubmitButton title='Register' />
             </form>

@@ -12,8 +12,7 @@ const PageLayout = (props) => {
             </div>
             <Footer />
         </div>
-
     );
-}
+};
 
 export default PageLayout;

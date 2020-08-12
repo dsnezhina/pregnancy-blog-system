@@ -9,17 +9,17 @@ import PageLayout from '../../components/page-layout';
 
 const PublicationsPage = () => {
     const location = useLocation();
-    const category = location.pathname.split("/")[2];
+    const category = location.pathname.split('/')[2];
 
     return (
         <PageLayout>
             <Aside />
             <div className={styles.container}>
-                <Title title="Publications" />
+                <Title title='Publications' />
                 <Blogposts category={category} />
             </div>
         </PageLayout>
     );
-}
+};
 
 export default PublicationsPage;

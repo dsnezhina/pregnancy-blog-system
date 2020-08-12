@@ -2,9 +2,8 @@ import React, { useState, useEffect, useCallback, useContext } from 'react';
 import { useHistory, useParams } from 'react-router-dom';
 import PageLayout from '../../components/page-layout';
 import styles from './index.module.css';
-import getBlogpost from '../../utils/getBlogpost';
-import UserContext from '../../Context'
-
+import getBlogposts from '../../utils/getBlogposts';
+import UserContext from '../../Context';
 
 const PublicationPage = () => {
 
@@ -30,7 +29,7 @@ const PublicationPage = () => {
             })
             .catch(e => {
                 history.push('/error')
-            })
+            });
     };
 
     const editPost = () => {
@@ -39,7 +38,7 @@ const PublicationPage = () => {
 
     const getBlogpostDetails = useCallback(async () => {
 
-        const blogpost = await getBlogpost(id);
+        const blogpost = await getBlogposts(1, undefined, id);
 
         setTitle(blogpost.title);
         setAuthor(blogpost.author.username);

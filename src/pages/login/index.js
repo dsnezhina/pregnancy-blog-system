@@ -36,15 +36,15 @@ const LoginPage = () => {
                 <Input
                     value={username}
                     onChange={(e) => setUsername(e.target.value)}
-                    label="Username"
-                    id="username"
+                    label='Username'
+                    id='username'
                 />
                 <Input
                     value={password}
                     onChange={(e) => setPassword(e.target.value)}
-                    label="Password"
-                    id="password"
-                    type="password"
+                    label='Password'
+                    id='password'
+                    type='password'
                 />
                 <SubmitButton title='Login' />
             </form>

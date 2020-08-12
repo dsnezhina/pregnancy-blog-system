@@ -1,22 +1,5 @@
-.container {
-    display: inline-block;
-    width: 83%;
-    height: auto;
-    /* border:1px solid blue; */
-    margin-bottom: 5%;
-    background-color: white;
-}
-
-.title {
-    text-align: center;
-    color: #6e6868;
-    text-decoration: underline;
-    margin-bottom: 2%;
-}
-
 .blogposts-wrapper {
     width: 100%;
-    /* border:1px solid red; */
     height: auto;
 }
 
