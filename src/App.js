@@ -50,6 +50,8 @@ const App = (props) => {
             }
 
             setLoading(false);
+        }).catch(e => {
+            console.log(e.message)
         })
     }, []);
 

@@ -23,7 +23,7 @@ const authenticate = async (url, body, onSuccess, onFailure) => {
             onFailure();
         }
     } catch (e) {
-        onFailure(e);
+        onFailure();
     };
 };
 

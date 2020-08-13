@@ -4,6 +4,8 @@ import PageLayout from '../../components/page-layout';
 import styles from './index.module.css';
 import getBlogposts from '../../utils/getBlogposts';
 import UserContext from '../../Context';
+import Button from '../../components/button/button';
+import getCookie from '../../utils/getCookie';
 
 const PublicationPage = () => {
 
@@ -21,8 +23,14 @@ const PublicationPage = () => {
 
     const deletePost = async () => {
 
+        const token = getCookie('x-auth-token');
+
         fetch(`http://localhost:9999/api/blogpost/${id}`, {
-            method: 'DELETE'
+            method: 'DELETE',
+            headers: {
+                'Content-Type': 'application/json',
+                'Authorization': token
+            }
         })
             .then(res => {
                 history.push('/publications');
@@ -70,8 +78,8 @@ const PublicationPage = () => {
                 </p>
                 <p className={styles.content}>{content}</p>
                 {(author === user.username) ? (<div className={styles['button-container']}>
-                    <button className={styles.button} onClick={editPost}>Edit</button>
-                    <button className={styles.button} onClick={deletePost}>Delete</button>
+                    <Button title='Edit' handleClick={editPost} />
+                    <Button title='Delete' handleClick={deletePost} />
                 </div>) : null}
             </div>
         </PageLayout>

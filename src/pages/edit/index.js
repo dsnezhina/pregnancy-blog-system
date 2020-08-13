@@ -7,6 +7,7 @@ import SubmitButton from '../../components/button/submit-button';
 import Input from '../../components/input';
 import getCookie from '../../utils/getCookie';
 import getBlogposts from '../../utils/getBlogposts';
+import Alert from '../../components/alert';
 
 
 const EditPublicationPage = () => {
@@ -14,6 +15,7 @@ const EditPublicationPage = () => {
     const [image, setImage] = useState('');
     const [category, setCategory] = useState('');
     const [content, setContent] = useState('');
+    const [error, setError] = useState(null);
     const history = useHistory();
     const params = useParams();
 
@@ -40,6 +42,10 @@ const EditPublicationPage = () => {
     const handleSubmit = async (e) => {
         e.preventDefault();
 
+        if (formValidation()) {
+            return;
+        };
+
         const token = getCookie('x-auth-token');
 
         fetch(`http://localhost:9999/api/blogpost/${id}`, {
@@ -62,10 +68,30 @@ const EditPublicationPage = () => {
             });
     };
 
+    const formValidation = () => {
+        if (title === '') {
+            setError('Please add title!');
+            return true;
+        } else if (image === '') {
+            setError('Please upload image!');
+            return true;
+        } else if (category === '') {
+            setError('Please choose category!');
+            return true;
+        } else if (content === '') {
+            setError('Please add content!');
+            return true;
+        } else {
+            setError(null);
+            return false;
+        };
+    };
+
     return (
         <PageLayout>
             <form className={styles.form} onSubmit={handleSubmit}>
                 <Title title='Edit publication' />
+                {error ? <Alert message={error} /> : null}
                 <Input
                     value={title}
                     onChange={(e) => setTitle(e.target.value)}
