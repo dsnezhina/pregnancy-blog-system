@@ -30,9 +30,6 @@ const Navigation = () => {
                 <Route path='/publications/:category?'>
                     {loggedIn ? (<PublicationsPage />) : (<Redirect to='/login' />)}
                 </Route>
-                {/* <Route path='/publications'>
-                    {loggedIn ? (<PublicationsPage />) : (<Redirect to='/login' />)}
-                </Route> */}
                 <Route path='/post'>
                     {loggedIn ? (<CreatePostPage />) : (<Redirect to='/login' />)}
                 </Route>

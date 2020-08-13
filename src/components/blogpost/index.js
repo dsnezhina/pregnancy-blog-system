@@ -1,6 +1,7 @@
 import React from 'react';
 import styles from './index.module.css';
 import { useHistory } from 'react-router-dom';
+import Button from '../button/button'
 
 const Blogpost = ({ _id, title, image, content, category, author }) => {
 
@@ -21,7 +22,7 @@ const Blogpost = ({ _id, title, image, content, category, author }) => {
             </p>
             <div>
                 <span className={styles.user}>
-                    <button className={styles.button} onClick={handleClick}>Details</button>
+                    <Button title='Details' handleClick={handleClick}/>
                 </span>
             </div>
         </div>

@@ -6,6 +6,7 @@ import SubmitButton from '../../components/button/submit-button';
 import Input from '../../components/input';
 import Blogposts from '../../components/blogposts';
 import getCookie from '../../utils/getCookie';
+import Alert from '../../components/alert';
 
 
 const CreatePostPage = () => {
@@ -14,9 +15,14 @@ const CreatePostPage = () => {
     const [category, setCategory] = useState('');
     const [content, setContent] = useState('');
     const [updatedBlogpost, setUpdatedBlogpost] = useState([]);
+    const [error, setError] = useState(null);
 
     const handleSubmit = async (e) => {
         e.preventDefault();
+
+        if (formValidation()) {
+            return;
+        };
 
         const token = getCookie('x-auth-token');
 
@@ -41,10 +47,30 @@ const CreatePostPage = () => {
         setUpdatedBlogpost([...updatedBlogpost, 1]);
     };
 
+    const formValidation = () => {
+        if (title === '') {
+            setError('Please add title!');
+            return true;
+        } else if (image === '') {
+            setError('Please upload image!');
+            return true;
+        } else if (category === '') {
+            setError('Please choose category!');
+            return true;
+        } else if (content === '') {
+            setError('Please add content!');
+            return true;
+        } else {
+            setError(null);
+            return false;
+        };
+    };
+
     return (
         <PageLayout>
             <form className={styles.form} onSubmit={handleSubmit}>
                 <Title title='Create a post...' />
+                {error ? <Alert message={error} /> : null}
                 <Input
                     value={title}
                     onChange={(e) => setTitle(e.target.value)}
