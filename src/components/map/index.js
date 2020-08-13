@@ -6,8 +6,6 @@ import styles from './index.module.css';
 const Map = ({ location, zoomLevel }) => {
     return (
         <div className={styles.map}>
-            {/* <h2 className={styles["map-h2"]}> Or come <b>visit us</b></h2> */}
-
             <div className={styles["google-map"]}>
                 <GoogleMapReact
                     bootstrapURLKeys={{ key: 'AIzaSyA8ZpvPBRdH5iHhL19k68rqEAm8Eq_fvtM' }}
