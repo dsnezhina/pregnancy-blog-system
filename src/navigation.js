@@ -16,6 +16,7 @@ import PublicationPage from './pages/publication';
 import EditPublicationPage from './pages/edit';
 import ProfilePage from './pages/profile';
 import UserContext from './Context'
+import ContactsPage from './pages/contacts';
 
 const Navigation = () => {
 
@@ -49,6 +50,7 @@ const Navigation = () => {
                 <Route path='/profile/:userid' >
                     {loggedIn ? (<ProfilePage />) : (<Redirect to='/login' />)}
                 </Route>
+                <Route path='/contacts' component={ContactsPage} />
                 <Route component={ErrorPage} />
             </Switch>
         </BrowserRouter>
