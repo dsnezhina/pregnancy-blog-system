@@ -1,12 +1,12 @@
 # Project Name & Pitch
 
-**Pregnancy Blog System**
+**Pregnancy Blog System**</br>
 Blog posts system designed for mothers and pregnant women to share their stories and experience. The application is built with React, JavaScript, and CSS.
 
 # Project Screen Shots
 
- (https://res.cloudinary.com/dd6thfux1/image/upload/v1597424837/guest_ixnnu5.jpg)
- (https://res.cloudinary.com/dd6thfux1/image/upload/v1597424837/user_dvvlky.jpg)
+ ![Image](https://octodex.github.com/images/yaktocat.png)(https://res.cloudinary.com/dd6thfux1/image/upload/v1597424837/guest_ixnnu5.jpg)
+ ![Image](https://res.cloudinary.com/dd6thfux1/image/upload/v1597424837/user_dvvlky.jpg)
  
 # Installation and Setup Instructions
 
