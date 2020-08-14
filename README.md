@@ -12,11 +12,11 @@ User registration form </br>
 After successful login, registered users can access:</br>
 
 Home page </br>
-Publications page with all posts sorted by publication date; </br>
-Create post page;</br>
-Post details page for each post with the ability to edit or delete own posts;</br>
-Edit post page (only applicable to own posts);</br>
-User’s profile page with all personal post listed and personal info block;</br>
+Publications page with all posts sorted by publication date </br>
+Create post page</br>
+Post details page for each post with the ability to edit or delete own posts</br>
+Edit post page (only applicable to own posts)</br>
+User’s profile page with all personal post listed and personal info block</br>
 
 
 The application is built with React, JavaScript, and CSS.</br>
