@@ -1,38 +1,6 @@
-.textarea {
-    width: 40%;
-    display: block;
-    margin: 0 auto;
-    resize: none;
-    padding: 2%;
-    height: 20vh;
-    font-style: italic;
-    border-radius: 6px;
-    border:1px solid #6e6868;
-    color: #6e6868;
-}
-
-.select {
-    text-align: center;
-    border:1px solid #6e6868;
-    padding: 0.25%;
-    width: 16%;
-    border-radius: 6px;
-    color: #6e6868;
-    margin-left: 1.5%;
-    margin-bottom: 2%;
-}
-
 .form {
     width: 83%;
     display: inline-block;
     vertical-align: top;
 }
-
-.label {
-    float: left;
-    width: 46%;
-    text-align: right;
-}
-
-
 

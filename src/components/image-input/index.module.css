@@ -1,0 +1,16 @@
+.button {
+    text-align: center;
+    border:1px solid #6e6868;
+    padding: 0.4%;
+    width: 16%;
+    border-radius: 6px;
+    color: #6e6868;
+    margin-left: 1.5%;
+    margin-bottom: 1%;
+}
+
+.label {
+    float: left;
+    width: 46%;
+    text-align: right;
+}

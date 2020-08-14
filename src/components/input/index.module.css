@@ -19,3 +19,16 @@
     padding: 1%;
     text-align: center;
 }
+
+.textarea {
+    width: 40%;
+    display: block;
+    margin: 0 auto;
+    resize: none;
+    padding: 2%;
+    height: 20vh;
+    font-style: italic;
+    border-radius: 6px;
+    border:1px solid #6e6868;
+    color: #6e6868;
+}

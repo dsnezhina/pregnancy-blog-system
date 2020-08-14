@@ -7,7 +7,10 @@ import Input from '../../components/input';
 import Blogposts from '../../components/blogposts';
 import getCookie from '../../utils/getCookie';
 import Alert from '../../components/alert';
-
+import Select from '../../components/select';
+import ImageInput from '../../components/image-input';
+import Textarea from '../../components/input/textarea';
+import formValidation from '../../utils/formValidation';
 
 const CreatePostPage = () => {
     const [title, setTitle] = useState('');
@@ -20,7 +23,7 @@ const CreatePostPage = () => {
     const handleSubmit = async (e) => {
         e.preventDefault();
 
-        if (formValidation()) {
+        if (formValidation(title, image, category, content, setError)) {
             return;
         };
 
@@ -46,25 +49,26 @@ const CreatePostPage = () => {
         setContent('');
         setUpdatedBlogpost([...updatedBlogpost, 1]);
     };
+    
+    const openWidget = () => {
 
-    const formValidation = () => {
-        if (title === '') {
-            setError('Please add title!');
-            return true;
-        } else if (image === '') {
-            setError('Please upload image!');
-            return true;
-        } else if (category === '') {
-            setError('Please choose category!');
-            return true;
-        } else if (content === '') {
-            setError('Please add content!');
-            return true;
-        } else {
-            setError(null);
-            return false;
-        };
+        const widget = window.cloudinary.createUploadWidget({
+            cloudName: 'dd6thfux1',
+            uploadPreset: 'Softuni'
+        }, (error, result) => {
+
+            if (result.event === 'success') {
+                setImage(result.info.url);
+            };
+
+            if (error) {
+                setError('Image error! Please try again.');
+            };
+        });
+
+        widget.open();
     };
+
 
     return (
         <PageLayout>
@@ -77,21 +81,9 @@ const CreatePostPage = () => {
                     label='Title'
                     id='title'
                 />
-                <Input
-                    value={image}
-                    onChange={(e) => setImage(e.target.value)}
-                    label='Image'
-                    id='image'
-                />
-                <label className={styles.label} htmlFor='category'>Category:</label>
-                <select className={styles.select} name='category' id='category' onChange={(e) => { setCategory(e.target.value) }}>
-                    <option value=''></option>
-                    <option value='Pregnancy'>Pregnancy</option>
-                    <option value='Mom Lifestyle'>Mom Lifestyle</option>
-                    <option value='Babies'>Babies</option>
-                    <option value='Kids'>Kids</option>
-                </select>
-                <textarea id='content' label='Content' className={styles.textarea} value={content} onChange={(e) => setContent(e.target.value)}></textarea>
+                <ImageInput onClick={openWidget} />
+                <Select onChange={(e) => { setCategory(e.target.value) }} />
+                <Textarea content={content} onChange={(e) => setContent(e.target.value)} />
                 <SubmitButton title='Post' onClick={handleSubmit} />
             </form>
             <Blogposts length={3} updatedBlogpost={updatedBlogpost} />
