@@ -26,7 +26,7 @@ const Blogposts = (props) => {
 
     useEffect(() => {
         getAllBlogposts();
-    }, [props.updatedBlogpost, getAllBlogposts]);
+    }, [getAllBlogposts]);
 
     return (
         (blogposts.length > 0)

@@ -1,10 +1,10 @@
 import React, { useState } from 'react';
+import { useHistory } from 'react-router-dom';
 import PageLayout from '../../components/page-layout';
 import Title from '../../components/title';
 import styles from './index.module.css';
 import SubmitButton from '../../components/button/submit-button';
 import Input from '../../components/input';
-import Blogposts from '../../components/blogposts';
 import getCookie from '../../utils/getCookie';
 import Alert from '../../components/alert';
 import Select from '../../components/select';
@@ -17,8 +17,8 @@ const CreatePostPage = () => {
     const [image, setImage] = useState('');
     const [category, setCategory] = useState('');
     const [content, setContent] = useState('');
-    const [updatedBlogpost, setUpdatedBlogpost] = useState([]);
     const [error, setError] = useState(null);
+    const history = useHistory();
 
     const handleSubmit = async (e) => {
         e.preventDefault();
@@ -29,7 +29,7 @@ const CreatePostPage = () => {
 
         const token = getCookie('x-auth-token');
 
-        await fetch('http://localhost:9999/api/blogpost', {
+        fetch('http://localhost:9999/api/blogpost', {
             method: 'POST',
             body: JSON.stringify({
                 title,
@@ -41,15 +41,14 @@ const CreatePostPage = () => {
                 'Content-Type': 'application/json',
                 'Authorization': token
             }
-        });
-
-        setTitle('');
-        setImage('');
-        setCategory('');
-        setContent('');
-        setUpdatedBlogpost([...updatedBlogpost, 1]);
+        }).then(res => {
+            history.push('/publications');
+        })
+            .catch(e => {
+                history.push('/error')
+            });
     };
-    
+
     const openWidget = () => {
 
         const widget = window.cloudinary.createUploadWidget({
@@ -86,7 +85,6 @@ const CreatePostPage = () => {
                 <Textarea content={content} onChange={(e) => setContent(e.target.value)} />
                 <SubmitButton title='Post' onClick={handleSubmit} />
             </form>
-            <Blogposts length={3} updatedBlogpost={updatedBlogpost} />
         </PageLayout >
     );
 };
