@@ -5,7 +5,7 @@ Blog posts system designed for mothers and pregnant women to share their stories
 
 # Project Screen Shots
 
- ![Image](https://octodex.github.com/images/yaktocat.png)(https://res.cloudinary.com/dd6thfux1/image/upload/v1597424837/guest_ixnnu5.jpg)
+ ![Image](https://res.cloudinary.com/dd6thfux1/image/upload/v1597424837/guest_ixnnu5.jpg)
  ![Image](https://res.cloudinary.com/dd6thfux1/image/upload/v1597424837/user_dvvlky.jpg)
  
 # Installation and Setup Instructions
