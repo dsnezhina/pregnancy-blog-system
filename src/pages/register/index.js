@@ -53,31 +53,33 @@ const RegisterPage = () => {
 
     return (
         <PageLayout>
-            <form className={styles.form} onSubmit={handleSubmit}>
-                <Title title='Register' />
-                {error ? <Alert message={error} /> : null}
-                <Input
-                    value={username}
-                    onChange={(e) => setUsername(e.target.value)}
-                    label='Username'
-                    id='username'
-                />
-                <Input
-                    type='password'
-                    value={password}
-                    onChange={(e) => setPassword(e.target.value)}
-                    label='Password'
-                    id='password'
-                />
-                <Input
-                    type='password'
-                    value={rePassword}
-                    onChange={(e) => setRePassword(e.target.value)}
-                    label='Re-password'
-                    id='re-password'
-                />
-                <SubmitButton title='Register' />
-            </form>
+            <div className={styles.container}>
+                <form className={styles.form} onSubmit={handleSubmit}>
+                    <Title title='Register' />
+                    {error ? <Alert message={error} /> : null}
+                    <Input
+                        value={username}
+                        onChange={(e) => setUsername(e.target.value)}
+                        label='Username'
+                        id='username'
+                    />
+                    <Input
+                        type='password'
+                        value={password}
+                        onChange={(e) => setPassword(e.target.value)}
+                        label='Password'
+                        id='password'
+                    />
+                    <Input
+                        type='password'
+                        value={rePassword}
+                        onChange={(e) => setRePassword(e.target.value)}
+                        label='Re-password'
+                        id='re-password'
+                    />
+                    <SubmitButton title='Register' />
+                </form>
+            </div>
         </PageLayout >
     );
 };
